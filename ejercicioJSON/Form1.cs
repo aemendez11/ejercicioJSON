@@ -39,14 +39,15 @@ namespace ejercicioJSON
             //Guarda a un alumno con sus notas
             Notas notas = new Notas();
             notas.Nombre = txtNombre.Text;
-            notas.NotasAlum = notasTemporales;
+            notas.NotasAlum = notasTemporales.GetRange(0,notasTemporales.Count);
 
             //Guarda a ese alumno en el listado de notas de alumnos
             listaNotas.Add(notas);
 
             //Borrar las notas temporales para el proximo alumno
-            //notasTemporales.Clear();
+            
             grabar();
+            notasTemporales.Clear();
         }
     }
 }
